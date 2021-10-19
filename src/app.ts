@@ -5,7 +5,7 @@ const logger = require("./logger/logger");
 const helmet=require('helmet')
 const app = express();
 
-app.use(helmet)
+app.use(helmet())
 app.use((req: requestType, res: responseType, next: ()=>void) => {
   const { method } = req;
   if (method !== "GET") {
