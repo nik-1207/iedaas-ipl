@@ -4,9 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node ./api/server.js",
+    "start": "node ./build/server.js",
+    "dev":"tsc && nodemon ./build/server.js",
     "lint": "eslint ./**/*.{js,ts} --fix",
-    "test": "jest"
+    "test": "jest",
+    "build":"tsc"
   },
   "author": "",
   "license": "ISC",

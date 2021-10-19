@@ -4,11 +4,13 @@ var express = require("express");
 var teamRoutes = require("./routes/teams");
 var teamDetailsRoutes = require("./routes/teamdetails");
 var logger = require("./logger/logger");
+var helmet = require('helmet');
 var app = express();
+app.use(helmet);
 app.use(function (req, res, next) {
     var method = req.method;
     if (method !== "GET") {
-        return res.status(405).end();
+        return res.status(405);
     }
     next();
 });
